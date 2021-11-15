@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Vue Dischi
+- API_URL: https://flynn.boolean.careers/exercises/api/array/music
