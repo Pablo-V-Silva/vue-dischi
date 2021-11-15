@@ -6,7 +6,9 @@
           <img :src="card.poster" class="card-img-top" :alt="card.title" />
         </div>
         <div class="card-body">
-          <h5 class="card-title text-light text-center">{{ card.title }}</h5>
+          <h5 class="card-title text-light text-center">
+            {{ card.title.toUpperCase() }}
+          </h5>
           <div class="card-text text-secondary text-center">
             {{ card.author }}
           </div>
