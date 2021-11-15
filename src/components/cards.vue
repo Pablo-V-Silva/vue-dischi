@@ -1,16 +1,18 @@
 <template>
-  <div class="row row-cols-2 row-cols-sm-4 row-cols-lg-6">
+  <div class="row row-cols-6 justify-content-center g-4">
     <div class="col" v-for="card in cards" :key="card.title">
-      <div class="card_color" style="width: 18rem">
-        <img
-          :src="card.poster"
-          class="card-img-top"
-          :alt="card.title"
-          width="90%"
-        />
+      <div class="card_color">
+        <div class="imgcontain">
+          <img :src="card.poster" class="card-img-top" :alt="card.title" />
+        </div>
         <div class="card-body">
           <h5 class="card-title text-light text-center">{{ card.title }}</h5>
-          <p class="card-text text-light text-center">{{ card.author }}</p>
+          <div class="card-text text-secondary text-center">
+            {{ card.author }}
+          </div>
+          <div class="card-text text-secondary text-center">
+            {{ card.year }}
+          </div>
         </div>
       </div>
     </div>
@@ -43,6 +45,13 @@ export default {
 @import "../assets/scss/variables.scss";
 
 .card_color {
-  background-color: $card_color;
+  background-color: #2e3a46;
+  min-height: 100%;
+
+  .imgcontain {
+    width: 70%;
+    margin: auto;
+    padding-top: 1rem;
+  }
 }
 </style>

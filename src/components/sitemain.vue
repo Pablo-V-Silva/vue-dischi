@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <div class="container-fluid">
+  <main class="mt-4">
+    <div class="contain">
       <Card />
     </div>
   </main>
