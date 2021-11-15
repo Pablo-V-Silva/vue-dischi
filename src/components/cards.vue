@@ -1,5 +1,5 @@
 <template>
-  <div class="row row-cols-6 justify-content-center g-4">
+  <div class="row row-cols-6 justify-content-center g-4" v-if="loader">
     <div class="col" v-for="card in cards" :key="card.title">
       <div class="card_color">
         <div class="imgcontain">
@@ -19,6 +19,10 @@
       </div>
     </div>
   </div>
+
+  <div v-else>
+    <h1 class="text-light text-center mt-5">Loading your songs..</h1>
+  </div>
 </template>
 
 <script>
@@ -28,6 +32,7 @@ export default {
   data() {
     return {
       cards: [],
+      loader: false,
     };
   },
   components: {},
@@ -36,8 +41,9 @@ export default {
     axios
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
+        this.loader = resp.data.success;
         this.cards = resp.data.response;
-        console.log(resp.data.response);
+        console.log(resp.data.success);
       });
   },
 };
