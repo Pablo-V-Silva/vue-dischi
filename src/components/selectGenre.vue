@@ -1,7 +1,12 @@
 <template>
   <select class="mb-4" name="genre" id="">
     <option value="">Select Genre</option>
-    <option v-for="genre in genres" :key="genre.genre" value="">
+    <option
+      v-for="genre in genres"
+      :key="genre.author"
+      value=""
+      v-show="!genres.includes(genre.genre)"
+    >
       {{ genre.genre }}
     </option>
   </select>
