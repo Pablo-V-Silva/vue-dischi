@@ -1,13 +1,7 @@
 <template>
   <main class="mt-4">
     <div class="contain">
-      <select class="mb-4" name="genre" id="">
-        <option value="">Select Genre</option>
-        <option value="">jazz</option>
-        <option value="">rock</option>
-        <option value="">pop</option>
-      </select>
-
+      <SelectGenre />
       <Card />
     </div>
   </main>
@@ -15,10 +9,12 @@
 
 <script>
 import Card from "./cards.vue";
+import SelectGenre from "./selectGenre.vue";
 
 export default {
   components: {
     Card,
+    SelectGenre,
   },
 };
 </script>

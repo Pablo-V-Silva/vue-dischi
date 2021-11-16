@@ -43,7 +43,6 @@ export default {
       .then((resp) => {
         this.loader = resp.data.success;
         this.cards = resp.data.response;
-        console.log(resp.data.success);
       });
   },
 };
