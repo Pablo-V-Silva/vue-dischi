@@ -2,13 +2,13 @@
   <select
     v-model="select"
     class="mb-4"
-    name="genre"
+    name="author"
     id=""
-    @change="$emit('musicGenre', select)"
+    @change="$emit('musicAuthor', select)"
   >
-    <option value="all">Select Genre</option>
-    <option v-for="genre in genres" :key="genre.author" :value="genre">
-      {{ genre }}
+    <option value="all">Select Author</option>
+    <option v-for="artist in artists" :key="artist.author" :value="artist">
+      {{ artist }}
     </option>
   </select>
 </template>
@@ -19,7 +19,6 @@ import axios from "axios";
 export default {
   data() {
     return {
-      genres: [],
       artists: [],
       select: "all",
     };
@@ -30,17 +29,10 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
         resp.data.response.forEach((album) => {
-          if (!this.genres.includes(album.genre)) {
-            this.genres.push(album.genre);
-          }
-        });
-
-        resp.data.response.forEach((album) => {
           if (!this.artists.includes(album.author)) {
             this.artists.push(album.author);
           }
         });
-        console.log(this.artists);
       });
   },
 };
